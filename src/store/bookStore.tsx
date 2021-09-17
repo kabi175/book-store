@@ -1,4 +1,4 @@
-import { useContext, createContext } from 'react';
+import React, { useContext, createContext } from 'react';
 import { makeAutoObservable } from 'mobx';
 
 export class BookStore {
@@ -9,7 +9,9 @@ export class BookStore {
 	public constructor() {
 		makeAutoObservable(this);
 	}
-
+	public get books(): Product[] {
+		return this._books;
+	}
 	public isLoading(): boolean {
 		return this._loading;
 	}
