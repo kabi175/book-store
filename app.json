@@ -22,6 +22,11 @@
 				"foregroundImage": "./assets/adaptive-icon.png",
 				"backgroundColor": "#FFFFFF"
 			},
+			"config": {
+				"googleSignIn": {
+					"certificateHash": "8E:0B:3D:33:44:F4:47:33:0A:DF:52:4B:25:C6:0D:3F:15:C5:CC:27"
+				}
+			},
 			"package": "store.apk"
 		},
 		"web": {

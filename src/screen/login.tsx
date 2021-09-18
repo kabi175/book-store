@@ -11,6 +11,8 @@ export default function Login() {
 		const config = {
 			androidClientId:
 				'805480152400-18ud78iteqv6004gtl4cikp4kc2na8na.apps.googleusercontent.com',
+			androidStandaloneAppClientId:
+				'805480152400-prl8me0498msllg78d3q9e7cplsudk2i.apps.googleusercontent.com',
 			scopes: ['profile', 'email'],
 		};
 		try {
