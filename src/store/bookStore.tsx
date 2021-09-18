@@ -1,5 +1,6 @@
 import React, { useContext, createContext } from 'react';
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
+import { loadBooks } from '../api';
 
 export class BookStore {
 	private _books: Product[] = [];
@@ -12,15 +13,23 @@ export class BookStore {
 	public get books(): Product[] {
 		return this._books;
 	}
-	public isLoading(): boolean {
+	public get isEmpty(): boolean {
+		if (this._books.length == 0) return true;
+		return false;
+	}
+	public get isLoading(): boolean {
 		return this._loading;
 	}
 
-	public load() {
-		this._loading = true;
-		const products: Product[] = []; //[TODO]
-		this._books.push(...products);
-		this._loading = false;
+	public async load() {
+		runInAction(() => {
+			this._loading = true;
+		});
+		const products = await loadBooks();
+		runInAction(() => {
+			this._books.push(...products);
+			this._loading = false;
+		});
 	}
 
 	public findBookById(id: string): Product | undefined {
