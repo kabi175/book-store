@@ -1,14 +1,9 @@
 # book-store
 
-####Todo
+A mobile application built with React Native, MobX and React Navigation.
 
--   Login Screen
--   Landing Screen
--   Infinite Scroll
--   Preview Model
--   Cart Screen
--   OAuth Gmail
--   API calls
--   Presist Data
+#### Features
 
----
+-   Google OAuth
+-   Add Book to Cart
+-   Place Order
